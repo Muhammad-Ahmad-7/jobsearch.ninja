@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Search Ninja</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <style>
+        .reveal {
+            position: relative;
+            transform: translateY(150px);
+            opacity: 0;
+            transition: all 0.5s ease-in;
+        }
+        .reveal.active {
+            transform: translateY(0px);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-950 to-black overflow-x-hidden">
+    <main class="h-full text-white">
+        <header>
+            <nav class="bg-gray-900 p-4 relative">
+                <div class="container mx-auto flex justify-between items-center">
+                    <!-- Logo -->
+                    <div>
+                        <img src="https://assets-global.website-files.com/64d1eaf3c58206c07f198e86/64d1edc0c58206c07f1cc646_Group%2041.svg" alt="logo" class="text-white">
+                    </div>
+                    <!-- Navigation Links -->
+                    <div class="hidden md:block">
+                        <a class="mx-2 text-xl cursor-pointer transition-colors duration-500 hover:text-blue-500" onclick="scrollToBenefits()">Benefits</a>
+                        <a class="mx-2 text-xl cursor-pointer transition-colors duration-500 hover:text-blue-500" onclick="scrollToFeatures()"
+                        >Features</a>
+                        <a class="mx-2 text-xl cursor-pointer transition-colors duration-500 hover:text-blue-500" onclick="scrollToFaqs()">FAQ</a>
+                        <button class="border border-solid border-white border-t-1 border-r-1 border-b-1 border-l-1 rounded-3xl p-2 transition-colors duration-500 hover:bg-slate-900 hover:text-white">
+                            Get Started
+                        </button>
+                    </div>
+                    <!-- Hamburger Icon for Mobile -->
+                    <div class="md:hidden">
+                        <button id="mobile-menu-toggle"
+                            class="text-gray-300 hover:text-white focus:outline-none focus:text-white">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16m-7 6h7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <!-- Mobile Menu -->
+                <div id="mobile-menu"
+                    class="absolute top-full left-0 z-20 bg-gray-900 w-full py-3 text-center hidden md:hidden">
+                    <div class="flex flex-col justify-center items-center gap-4">
+                        <a class="mx-2 text-xl cursor-pointer transition-colors duration-500 hover:text-blue-500" onclick="scrollToBenefits()">Benefits</a>
+                        <a class="mx-2 text-xl cursor-pointer transition-colors duration-500 hover:text-blue-500" onclick="scrollToFeatures()"
+                        >Features</a>
+                        <a class="mx-2 text-xl cursor-pointer transition-colors duration-500 hover:text-blue-500" onclick="scrollToFaqs()">FAQ</a>
+                        <button class="border border-solid border-white border-t-1 border-r-1 border-b-1 border-l-1 rounded-3xl p-2 transition-colors duration-500 hover:bg-slate-900 hover:text-white">
+                            Get Started
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="flex flex-col justify-center items-center">
+            <section class="flex justify-center items-center  mt-36">
+                <div class="md:w-[50%] w-[80%] flex justify-center items-center flex-col gap-4">
+                    <h1 class="md:text-4xl text-3xl text-center">
+                        Land Your Dream Job Faster andEasier Than Ever Before.
+                    </h1>
+                    <p class="text-center md:text-xl text-lg mt-4">
+                        Whether you’re a graduate, contractor, career changer or just looking to take the next step in your career, your job search sidekick is ready to do the hard work for you.
+                    </p>
+                    <button class="border border-solid border-white border-t-1 border-r-1 border-b-1 border-l-1 rounded-3xl p-2 transition-colors duration-500 hover:bg-slate-900 hover:text-white md:text-xl text-base">
+                        Boost your job search for free
+                    </button>
+                </div>
+            </section>
+            <section class="flex justify-center items-center mt-4 w-full">
+                <img src="https://assets-global.website-files.com/64d1eaf3c58206c07f198e86/64d1f379896d1a01cce1b684_hero%20image-p-800.jpg" alt="" class="rounded-xl w-[70%]">
+            </section>
+        </div>
+    </main>
+    <section class="mt-10 w-full flex flex-col items-center justify-center rounded-t-[35px] rounded-b-[35px] bg-[#f6f7fa] h-auto">
+        <div class="flex flex-wrap items-center h-[450px] sm:h-[400px] md:h-[300px] lg:h-[200px] justify-center gap-4" id="benefits">
+            <div class="flex items-center justify-center flex-col w-[33%] lg:w-[13%]">
+                <img class="w-[40px]" src="https://assets-global.website-files.com/64d1eaf3c58206c07f198e86/64d1f67cb2ea56b4491c5202_Vector.svg" alt="">
+                <h5 class="text-center">
+                    Get more job interviews
+                </h5>
+            </div>
+            <div class="flex items-center justify-center flex-col w-[33%] lg:w-[13%]">
+                <img class="w-[40px]" src="https://assets-global.website-files.com/64d1eaf3c58206c07f198e86/64d1f671adfd5cfe1e99904b_Vector-1.svg" alt="">
+                <h5 class="text-center">
+                    Apply for jobs in minutes and save hours every week.
+                </h5>
+            </div>
+            <div class="flex items-center justify-center flex-col w-[33%] lg:w-[13%]">
+                <img class="w-[40px]" src="https://assets-global.website-files.com/64d1eaf3c58206c07f198e86/64d1f665584db289441f4df5_Edit-Square.svg" alt="">
+                <h5 class="text-center">
+                    Never struggle with writing cover letters or resumes again.
+                </h5>
+            </div>
+            <div class="flex items-center justify-center flex-col w-[33%] lg:w-[13%]">
+                <img class="w-[40px]" src="https://assets-global.website-files.com/64d1eaf3c58206c07f198e86/64d1f65b62b0e865fab24246_Category.svg" alt="">
+                <h5 class="text-center">
+                    Easily track your applications in one place.
+                </h5>
+            </div>
+        </div>
+        <div class="mt-10 flex items-center justify-center flex-col" id="features">
+            <p class="text-blue-600">WHAT WE OFFER</p>
+            <h1 class="text-4xl text-center">Make Your Job Hunt Process <span class="text-blue-700">Easy</span>
+            </h1>
+            <p class="my-5 text-center">Our AI-powered platform makes creating custom resumes and cover letters fast and easy.</p>
+        </div>
+        <div class="mt-10 flex flex-col md:flex-col lg:flex-row w-full justify-center items-center gap-4">
+            <div class="rounded-xl flex flex-col bg-[#dededfe7] h-auto lg:w-[30%] md:w-[80%] w-[80%] reveal">
+                <div class="flex items-center justify-center">
+                    <img src="https://assets-global.website-files.com/64d1eaf3c58206c07f198e86/64d20f7b07582c9f323cac78_feature%201-p-500.png" alt="" class="h-[250px]">
+                </div>
+                <div class="p-4">
+                    <h1 class="text-2xl">Tailored Cover Letters <br>For Every Job.</h1>
+                    <p class="text-gray-500 text-center">
+                        Professionally crafted compelling cover letters that are customised to each job application. Stand out from the competition and increase your chances of getting noticed by recruiters.
+                    </p>
+                </div>
+            </div>
+            <div class="rounded-xl flex flex-col bg-[#dededfe7] h-auto  lg:w-[30%] md:w-[80%] w-[80%] reveal">
+                <div class="flex items-center justify-center">
+                    <img src="https://assets-global.website-files.com/64d1eaf3c58206c07f198e86/64d20e7a1dfea48e36132cea_Feature%2002-p-800.jpg" alt="" class="md:h-[250px] h-[200px]">
+                </div>
+                <div class="p-4">
+                    <h1 class="text-2xl">Optimised Resume.</h1>
+                    <p class="text-gray-500 text-center">
+                        Apply with confidence with impactful resumes that are tailored specifically to the requirements of each job and highlight your relevant skills, experiences, and achievements to impress potential employers and secure more interviews.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4 p-4 bg-[#dededfe7] rounded-xl h-auto flex lg:flex-row-reverse justify-center items-center lg:w-[80%] md:w-[80%] flex-col gap-4 w-[80%]">
+            <div class="lg:w-[50%] flex items-center justify-center">
+                <img src="https://assets-global.website-files.com/64d1eaf3c58206c07f198e86/64d20fba07582c9f323d4237_Feature%2003-p-500.png" alt="">
+            </div>
+            <div class="lg:w-[50%]">
+                <h1 class="text-3xl">
+                    Your Personalised Job Board
+                </h1>
+                <p class="text-gray-500 lg:text-center">
+                    Utilise our intuitive kanban-style job board to manage your applications effectively. Visualise your job search progress, keep track of applications, and stay organized throughout the entire process.
+                </p>
+            </div>
+        </div>
+        <div class="mt-4 p-4 bg-[#ffffff] rounded-xl h-auto flex lg:flex-row justify-center items-center lg:w-[80%] md:w-[80%] flex-col gap-4 w-[80%]">
+            <div class="lg:w-[50%] flex items-center justify-center">
+                <img src="https://assets-global.website-files.com/64d1eaf3c58206c07f198e86/64d20cd2904cf69022a51ed5_feature%204-p-500.png" alt="">
+            </div>
+            <div class="lg:w-[50%]">
+                <h1 class="text-3xl">
+                    More To Come From Job Search Ninja
+                </h1>
+                <p class="text-gray-500 lg:text-center">
+                    We’re a young business and looking to make your career success our success. What’s in the Job Search Ninja pipeline?
+                </p>
+            </div>
+        </div>
+        <div class="md:w-[60%] w-full flex items-center justify-center flex-col" id="faqs">
+            <div class="flex items-center justify-center flex-col gap-3">
+                <p class="bg-slate-400 rounded-md w-[50px] text-center">FAQ</p>
+                <p class="md:text-3xl sm:text-2xl text-xl text-center">
+                    Frequently Asked Questions
+                </p>
+            </div>
+            <div class="w-[80%] my-4 h-auto">
+                <dt class="flex justify-between items-center" aria-controls="faq-1">
+                    <p class="font-semibold text-lg">What is Job Search Ninja?</p>
+                    <i class="fa-solid fa-chevron-up -rotate-180 transition cursor-pointer"></i>
+                </dt>
+                <dd id="faq-1" class="hidden text-lg font-light mt-6 transition-all duration-700 ease-in-out">
+                    <p>
+                        The job search process is one of life’s more painful processes. Writing cover letters and resumes, making applications and jumping over company hurdles just to get your application under their noses. Then there’s the interview process!
+                        Job Search Ninja aims to be a revolution in the job search industry by harnessing the power of artificial intelligence to make this whole process faster and easier for job seekers.
+                    </p>
+                </dd>
+                <hr>
+            </div>
+            <div class="w-[80%] my-4 h-auto">
+                <dt class="flex justify-between items-center" aria-controls="faq-2">
+                    <p class="font-semibold text-lg">How does it cost to use job Search Ninja?</p>
+                    <i class="fa-solid fa-chevron-up transition cursor-pointer -rotate-180"></i>
+                </dt>
+                <dd id="faq-2" class="hidden text-lg font-light mt-6">
+                    <p>
+                        The job search process is one of life’s more painful processes. Writing cover letters and resumes, making applications and jumping over company hurdles just to get your application under their noses. Then there’s the interview process!
+                        Job Search Ninja aims to be a revolution in the job search industry by harnessing the power of artificial intelligence to make this whole process faster and easier for job seekers.
+                    </p>
+                </dd>
+                <hr>
+            </div>
+            <div class="w-[80%] my-4 h-auto">
+                <dt class="flex justify-between items-center" aria-controls="faq-3">
+                    <p class="font-semibold text-lg">How to best use Job Search Ninja?</p>
+                    <i class="fa-solid fa-chevron-up -rotate-180 cursor-pointer transition"></i>
+                </dt>
+                <dd id="faq-3" class="hidden text-lg font-light mt-6 transition-all duration-300">
+                    <p class="transition-all">
+                        The job search process is one of life’s more painful processes. Writing cover letters and resumes, making applications and jumping over company hurdles just to get your application under their noses. Then there’s the interview process!
+                        Job Search Ninja aims to be a revolution in the job search industry by harnessing the power of artificial intelligence to make this whole process faster and easier for job seekers.
+                    </p>
+                </dd>
+                <hr>
+            </div>
+            
+        </div>
+    </section>
+    <section class="text-white bg-gradient-to-r from-gray-900 via-transparent to-transparent">
+        <div class="p-8 flex gap-4 items-center justify-center flex-col">
+            <p>
+                Looking for a Job?
+            </p>
+            <h1 class="text-3xl">
+                Jobsearch Ninja has got you covered!
+            </h1>
+            <p>
+                Build your resume & cover letter in minutes with Jobsearch.ninja
+            </p>
+            <button class="mt-4 bg-gradient-to-r from-gray-900 to-gray-800 hover:from-gray-800 hover:to-gray-700 text-white py-2 px-4 transition-colors duration-500 border-white rounded-full">
+                Get Started For Free
+            </button>
+            <img src="https://assets-global.website-files.com/64d1eaf3c58206c07f198e86/64d214823e9fffdc64d9c59a_work%20experience-p-1080.png" alt="" class="rounded-t-xl mt-8">
+        </div>
+    </section>
+    <footer class="flex justify-around text-white bg-gradient-to-r from-gray-900 via-transparent to-transparent p-4 flex-col items-center gap-9 md:flex-row">
+        <div>
+            <h3 class="font-xl">
+                Keep Up To Date
+            </h3>
+            <p>Join our newsletter for regular updates of Job Searching
+            </p>
+            <div>
+                <input type="text" placeholder="Enter Your Email" class="rounded-full px-5 py-2">
+                <button class="mt-4 bg-gradient-to-r from-gray-900 to-gray-800 hover:from-gray-800 hover:to-gray-700 text-white py-2 px-4 transition-colors duration-500 border-white rounded-full" >Submit</button>
+            </div>
+            <div class="flex gap-4 mt-2">
+                <a href="https://twitter.com/jobsearchninja_" class=" w-inline-block bg-white"><img src="https://assets-global.website-files.com/62434fa732124a0fb112aab4/62434fa732124ac15112aad5_twitter%20small.svg" alt="" class="w-6 h-6"></a>
+                <a href="https://www.linkedin.com/company/job-search-ninja/" class="w-inline-block bg-white">
+                    <img src="https://assets-global.website-files.com/62434fa732124a0fb112aab4/62434fa732124a389912aad8_linkedin%20small.svg" alt="" class="w-6 h-6"></a>
+                <a href="https://www.facebook.com/people/Job-Search-Ninja/100090069113578/" class="w-inline-block bg-white"><img src="https://assets-global.website-files.com/62434fa732124a0fb112aab4/62434fa732124a51bf12aae9_facebook%20small.svg" alt="" class="w-6 h-6"></a>
+            </div>
+            
+        </div>
+        <div class="flex gap-12">
+            <ul class="text-white">
+                <li><a href="#" class="my-2">SUPPORT</a></li>
+                <li><a href="#" class="my-2">FAQ</a></li>
+                <li><a href="#" class="my-2">Blog</a></li>
+            </ul>
+            <ul class="text-white">
+                <li><a href="#" class="my-5">COMPANY</a></li>
+                <li><a href="#" class="my-2">About us</a></li>
+                <li><a href="#" class="my-2">Privacy Policy</a></li>
+                <li><a href="#" class="my-2">Terms &amp; Condition</a></li>
+                <li><a href="#" class="my-2">Contact us</a></li>
+            </ul>
+        </div>
+    </footer>
+    <p class="text-center text-white bg-gradient-to-r from-gray-900 via-transparent to-transparen">Copyright © 2023 Job Search Ninja. All rights reserved.</p>
+</body>
+<script>
+    
+    const dtElement = document.querySelectorAll('dt');
+    dtElement.forEach(element => {
+        element.addEventListener('click', () => {
+            const ddId = element.getAttribute('aria-controls');
+            const ddElement = document.getElementById(ddId);
+            const ddArrowIcon = element.querySelectorAll('i')[0];
+
+            ddElement.classList.toggle('hidden');
+            ddArrowIcon.classList.toggle('-rotate-180');
+        })
+    })
+    function scrollToBenefits() {
+        const benefitsSection = document.getElementById("benefits");
+        benefitsSection.scrollIntoView({ behavior: "smooth" });
+    }
+
+    function scrollToFeatures() {
+        const benefitsSection = document.getElementById("features");
+        benefitsSection.scrollIntoView({ behavior: "smooth" });
+    }
+
+    function scrollToFaqs() {
+        const benefitsSection = document.getElementById("faqs");
+        benefitsSection.scrollIntoView({ behavior: "smooth" });
+    }
+
+    window.addEventListener('scroll', reveal);
+
+    function reveal() {
+        const reveals = document.querySelectorAll('.reveal');
+        console.log(reveals)
+        for (let index = 0; index < reveals.length; index++) {
+            const windowHeight = window.innerHeight;
+            const revealTop = reveals[index].getBoundingClientRect().top;
+            const revealPoint = 150;
+
+            if (revealTop < windowHeight - revealPoint) {
+                reveals[index].classList.add('active');
+            } else {
+                reveals[index].classList.remove('active');
+            }
+            
+        }
+    }
+
+    function bars() {
+        console.log("hi")
+        const liElements = document.getElementById('nav-li');
+        const liElementsHidden = liElements.classList.contains('top-[-130px]');
+        console.log(liElementsHidden)
+        liElements.classList.toggle('top-[-130px]')
+        // liElements.classList.toggle('hidden');
+        // const btn = document.getElementById('btn');
+        // const btnHidden = btn.classList.contains('hidden');
+        // btn.classList.toggle('hidden')
+    }
+
+    document.getElementById('mobile-menu-toggle').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+</script>
+</html>
